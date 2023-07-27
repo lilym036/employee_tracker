@@ -14,7 +14,7 @@ const db = mysql.createConnection(
   console.log(`Connected to the company_db database.`)
 );
 
-
+// Initial question the user is asked
 const init = () => {
   inquirer.prompt([
     {
@@ -25,7 +25,7 @@ const init = () => {
     },
 
   ])
-
+// the function that will be called according to what the user chooses from the aboove question
     .then((response) => {
       console.log(response);
       if (response.firstQues === "View All Employees") {
@@ -57,7 +57,7 @@ const init = () => {
 }
 
 init();
-
+// each function gets information from mysql tables
 const viewEmployees = () => {
   db.query(`SELECT * FROM employee LEFT JOIN dep_role ON employee.dep_role_id = dep_role.id`, (err, results) => {
     err ? console.log(err) : console.table(results);
@@ -67,7 +67,7 @@ const viewEmployees = () => {
 
 
 const viewAllRoles = () => {
-  db.query(`SELECT * FROM dep_role`, (err, results) => {
+  db.query(`SELECT * FROM dep_role LEFT JOIN department ON dep_role.department_id = department.id`, (err, results) => {
     err ? console.log(err) : console.table(results);
     init();
   })

@@ -3,6 +3,7 @@ CREATE DATABASE company_db;
 
 USE company_db;
 
+-- My sql tables
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT, 
   name VARCHAR(30) NOT NULL,
