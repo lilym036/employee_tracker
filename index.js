@@ -15,7 +15,7 @@ const db = mysql.createConnection(
   );
 
 
-
+const inital = () => {
 inquirer.prompt ([
     {
         type: 'list',
@@ -42,10 +42,46 @@ inquirer.prompt ([
 
 ])
 
-
 .then((response) => {
     console.log(response);
 })
 .catch (err => {
         console.log(err)
    })
+
+  }
+
+initial();
+
+const viewEmployees = () => {
+  db.query(`SELECT * FROM employees`, (err, results) => {
+  err ? console.log(err) : console.log(results);
+  initial();
+  })};
+
+
+const viewAllRoles = () => {
+  db.query(`SELECT * FROM dep_role`, (err, results) => {
+    err ? console.log(err) : console.log(results);
+    initial();
+})};
+
+const viewAllDepartment= () => {
+  db.query(`SELECT * FROM department`, (err, results) => {
+    err ? console.log(err) : console.log(results);
+    initial();
+})};
+
+const addDept = () => {
+
+}
+
+const updateRoll= () => {
+
+}
+
+const addEmployee = () => {
+
+
+}
+
