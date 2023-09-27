@@ -1,4 +1,5 @@
 # employee_tracker
+![license MIT](https://img.shields.io/badge/license-MIT-red)
 
 ## Description
 This project was created to help business owners keep track of and manage employee data. 
@@ -37,7 +38,7 @@ Open node index.js in the integrated terminal and answer the prompts.
 https://drive.google.com/file/d/10tM9NZmGm-_hg0cqQ9kr7ZCoaDK_mZFS/view
 
 ## Credits
-Jacob Carver
+None at this time. 
 
 
 ## License
